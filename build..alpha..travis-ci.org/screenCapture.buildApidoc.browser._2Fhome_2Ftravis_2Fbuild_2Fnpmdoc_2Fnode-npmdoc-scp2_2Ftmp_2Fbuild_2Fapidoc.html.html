@@ -1,0 +1,844 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/lepture/node-scp2">scp2 (v0.5.0)</a>
+</h1>
+<h4>A pure javascript scp program based on ssh2.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.scp2">module scp2</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scp2.Client">
+            function <span class="apidocSignatureSpan">scp2.</span>Client
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scp2.scp">
+            function <span class="apidocSignatureSpan">scp2.</span>scp
+            <span class="apidocSignatureSpan">(src, dest, client, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">scp2.</span>Client.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">scp2.</span>_options</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">scp2.</span>client</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">scp2.</span>remote</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.scp2.Client">module scp2.Client</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scp2.Client.Client">
+            function <span class="apidocSignatureSpan">scp2.</span>Client
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scp2.Client.super_">
+            function <span class="apidocSignatureSpan">scp2.Client.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.scp2.Client.prototype">module scp2.Client.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scp2.Client.prototype.close">
+            function <span class="apidocSignatureSpan">scp2.Client.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scp2.Client.prototype.defaults">
+            function <span class="apidocSignatureSpan">scp2.Client.prototype.</span>defaults
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scp2.Client.prototype.download">
+            function <span class="apidocSignatureSpan">scp2.Client.prototype.</span>download
+            <span class="apidocSignatureSpan">(src, dest, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scp2.Client.prototype.mkdir">
+            function <span class="apidocSignatureSpan">scp2.Client.prototype.</span>mkdir
+            <span class="apidocSignatureSpan">(dir, attrs, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scp2.Client.prototype.parse">
+            function <span class="apidocSignatureSpan">scp2.Client.prototype.</span>parse
+            <span class="apidocSignatureSpan">(remote)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scp2.Client.prototype.sftp">
+            function <span class="apidocSignatureSpan">scp2.Client.prototype.</span>sftp
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scp2.Client.prototype.upload">
+            function <span class="apidocSignatureSpan">scp2.Client.prototype.</span>upload
+            <span class="apidocSignatureSpan">(src, dest, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scp2.Client.prototype.write">
+            function <span class="apidocSignatureSpan">scp2.Client.prototype.</span>write
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.scp2.client">module scp2.client</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scp2.client.Client">
+            function <span class="apidocSignatureSpan">scp2.client.</span>Client
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">scp2.client.</span>_options</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">scp2.client.</span>remote</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.scp2" id="apidoc.module.scp2">module scp2</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.scp2.Client" id="apidoc.element.scp2.Client">
+        function <span class="apidocSignatureSpan">scp2.</span>Client
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Client(options) {
+  this._options = options || {};
+
+  this.remote = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scp2.scp" id="apidoc.element.scp2.scp">
+        function <span class="apidocSignatureSpan">scp2.</span>scp
+        <span class="apidocSignatureSpan">(src, dest, client, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scp = function (src, dest, client, callback) {
+  if (typeof client === 'function') {
+    callback = client;
+    client = new Client();
+  }
+  client.on('error', callback);
+  var parsed = client.parse(src);
+  if (parsed.host &amp;&amp; parsed.path) {
+    cp2local(client, parsed, dest, callback);
+  } else {
+    cp2remote(client, src, dest, callback);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+var client = require('scp2')
+```
+
+Copy a file to the server:
+
+```js
+client.<span class="apidocCodeKeywordSpan">scp</span>('file.txt', 'admin:password@example.com:/home/admin/',
+function(err) {
+})
+```
+
+You can also add the port to the url (default is 22):
+
+```js
+client.scp('file.txt', 'admin:password@example.com:port:/home/admin/', function(err) {
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.scp2.Client" id="apidoc.module.scp2.Client">module scp2.Client</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.scp2.Client.Client" id="apidoc.element.scp2.Client.Client">
+        function <span class="apidocSignatureSpan">scp2.</span>Client
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Client(options) {
+  this._options = options || {};
+
+  this.remote = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scp2.Client.super_" id="apidoc.element.scp2.Client.super_">
+        function <span class="apidocSignatureSpan">scp2.Client.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.scp2.Client.prototype" id="apidoc.module.scp2.Client.prototype">module scp2.Client.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.scp2.Client.prototype.close" id="apidoc.element.scp2.Client.prototype.close">
+        function <span class="apidocSignatureSpan">scp2.Client.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function () {
+  if (this.__sftp) {
+    this.__sftp.end();
+    this.__sftp = null;
+  }
+  if (this.__ssh) {
+    this.__ssh.end();
+    this.__ssh = null;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    self.emit('transfer', buf, lastCursor, length);
+    sftp.write(handle, buf, 0, buf.length, lastIndex, function(err) {
+      lastIndex += buf.length;
+      lastCursor += 1;
+      callback(err);
+    });
+  }, function(err) {
+    sftp.<span class="apidocCodeKeywordSpan">close</span>(handle, callback);
+  });
+} else if (typeof content === 'number') {
+  // content is a file descriptor
+  length = parseInt((attrs.size - 1) / chunkSize, 10) + 1;
+  var range = new Array(length);
+  async.eachSeries(range, function(pos, callback) {
+    chunkSize = Math.min(chunkSize, attrs.size - lastIndex);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scp2.Client.prototype.defaults" id="apidoc.element.scp2.Client.prototype.defaults">
+        function <span class="apidocSignatureSpan">scp2.Client.prototype.</span>defaults
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">defaults = function (options) {
+  if (options) {
+    this._options = options || {};
+  } else {
+    return this._options;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+- **defaults** `function({})`
+
+set the default values for the remote server.
+
+```js
+client.<span class="apidocCodeKeywordSpan">defaults</span>({
+    port: 22,
+    host: 'example.com',
+    username: 'admin',
+    privateKey: '....',
+    // password: 'password', (accepts password also)
+});
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scp2.Client.prototype.download" id="apidoc.element.scp2.Client.prototype.download">
+        function <span class="apidocSignatureSpan">scp2.Client.prototype.</span>download
+        <span class="apidocSignatureSpan">(src, dest, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">download = function (src, dest, callback) {
+  var self = this;
+
+  self.sftp(function(err,sftp){
+    if (err) {
+      return callback(err);
+    }
+
+    var sftp_readStream = sftp.createReadStream(src);
+    sftp_readStream.on('error', function(err){
+      callback(err);
+    });
+    sftp_readStream.pipe(fs.createWriteStream(dest))
+    .on('close',function(){
+      self.emit('read', src);
+      callback(null);
+    })
+    .on('error', function(err){
+      callback(err);
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scp2.Client.prototype.mkdir" id="apidoc.element.scp2.Client.prototype.mkdir">
+        function <span class="apidocSignatureSpan">scp2.Client.prototype.</span>mkdir
+        <span class="apidocSignatureSpan">(dir, attrs, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mkdir = function (dir, attrs, callback) {
+  if (_.isFunction(attrs)) {
+    callback = attrs;
+    attrs = undefined;
+  }
+
+  if (attrs) {
+    attrs.mode = getFolderAttr(process.platform, attrs);
+  }
+
+  var self = this;
+  var dirs = [];
+  var exists = false;
+
+  this.sftp(function(err, sftp) {
+    if (err) {
+      return callback(err);
+    }
+
+    // for record log
+    var mkdir = function(dir, callback) {
+      self.emit('mkdir', dir);
+      sftp.mkdir(dir, attrs, callback);
+    };
+
+    async.until(function() {
+      return exists;
+    }, function(done) {
+      // detect if the directory exists
+      sftp.stat(dir, function(err, attr) {
+        if (err) {
+          dirs.push(dir);
+          dir = path.dirname(dir);
+        } else {
+          exists = true;
+        }
+        done();
+      });
+    }, function(err) {
+      if (err) {
+        callback(err);
+      } else {
+        // just like mkdir -p
+        async.eachSeries(dirs.reverse(), mkdir, callback);
+      }
+    });
+
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (err) {
+  return callback(err);
+}
+
+// for record log
+var mkdir = function(dir, callback) {
+  self.emit('mkdir', dir);
+  sftp.<span class="apidocCodeKeywordSpan">mkdir</span>(dir, attrs, callback);
+};
+
+async.until(function() {
+  return exists;
+}, function(done) {
+  // detect if the directory exists
+  sftp.stat(dir, function(err, attr) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scp2.Client.prototype.parse" id="apidoc.element.scp2.Client.prototype.parse">
+        function <span class="apidocSignatureSpan">scp2.Client.prototype.</span>parse
+        <span class="apidocSignatureSpan">(remote)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function (remote) {
+  if (_.isString(remote)) {
+    // username:password@host:/path/to
+    var regex = /^([a-zA-Z0-9\-\.]+)(\:.*)?@([^:]+):([^:]+:)?(.*)?$/;
+    var m = remote.match(regex);
+    if (!m) return {};
+    var ret = {
+      username: m[1],
+      host: m[3],
+    };
+    if (m[2]) {
+      ret.password = m[2].slice(1);
+    }
+    if (m.length===6 &amp;&amp; m[4]) {
+      ret.port = m[4].slice(0,-1);
+    }
+    if (m.length===6 &amp;&amp; m[5]) {
+      ret.path = m[5];
+    } else if (m.length===5 &amp;&amp; m[4]) {
+      ret.path = m[4];
+    }
+    this.remote = ret;
+    return ret;
+  }
+  this.remote = remote;
+  return remote;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scp2.Client.prototype.sftp" id="apidoc.element.scp2.Client.prototype.sftp">
+        function <span class="apidocSignatureSpan">scp2.Client.prototype.</span>sftp
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sftp = function (callback) {
+  if (this.__sftp) {
+    callback(null, this.__sftp);
+    return;
+  }
+
+  var remote = _.defaults(this.remote, this._options);
+  if (this.__ssh) {
+    this.__ssh.connect(remote);
+    return;
+  }
+
+  var self = this;
+  var ssh = new Connection();
+  ssh.on('connect', function() {
+    self.emit('connect');
+  });
+  ssh.on('ready', function() {
+    self.emit('ready');
+
+    ssh.sftp(function(err, sftp) {
+      if (err) throw err;
+      // save for reuse
+      self.__sftp = sftp;
+      callback(err, sftp);
+    });
+  });
+  ssh.on('error', function(err) {
+    self.emit('error', err);
+    callback(err);
+  });
+  ssh.on('end', function() {
+    self.emit('end');
+  });
+  ssh.on('close', function() {
+    self.emit('close');
+  });
+  ssh.on('keyboard-interactive', function(name, instructions, instructionsLang, prompts, finish) {
+    self.emit('keyboard-interactive', name, instructions, instructionsLang, prompts, finish);
+  });
+  ssh.on('change password', function(message, language, done) {
+    self.emit('change password', message, language, done);
+  });
+  ssh.on('tcp connection', function(details, accept, reject) {
+    self.emit('tcp connection', details, accept, reject);
+  });
+  ssh.connect(remote);
+  this.__ssh = ssh;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var ssh = new Connection();
+ssh.on('connect', function() {
+  self.emit('connect');
+});
+ssh.on('ready', function() {
+  self.emit('ready');
+
+  ssh.<span class="apidocCodeKeywordSpan">sftp</span>(function(err, sftp) {
+    if (err) throw err;
+    // save for reuse
+    self.__sftp = sftp;
+    callback(err, sftp);
+  });
+});
+ssh.on('error', function(err) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scp2.Client.prototype.upload" id="apidoc.element.scp2.Client.prototype.upload">
+        function <span class="apidocSignatureSpan">scp2.Client.prototype.</span>upload
+        <span class="apidocSignatureSpan">(src, dest, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">upload = function (src, dest, callback) {
+  dest = unixy(dest);
+
+  var self = this;
+
+  async.waterfall([
+    function(callback) {
+      fs.stat(src, callback);
+    },
+    function(stat, callback) {
+      if (stat.isDirectory()) return callback(new Error('Can not upload a directory'));
+
+      // Get the attributes of the source directory
+      fs.stat(path.dirname(src), function(err, dirStat) {
+        if(err) return callback(err);
+        self.mkdir(path.dirname(dest), dirStat, function(err){ callback(err, stat) });
+      });
+    },
+    function(stat, callback) {
+      fs.open(src, 'r', function(err, fd) { callback(err, stat, fd); });
+    },
+    function(stat, fd, callback) {
+      self.write({
+        source: src,
+        destination: dest,
+        content: fd,
+        attrs: stat
+      }, callback);
+    }
+  ], function(err) {
+    callback(err);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+- source: the source path, e.g. local/file.txt
+
+- **upload** `function(src, dest, callback) -&gt; callback(err)`
+
+upload a local file to the server.
+
+```js
+client.<span class="apidocCodeKeywordSpan">upload</span>('file.txt', '/home/admin/file.txt', callback)
+```
+
+- **download** `function(src, dest, callback) -&gt; callback(err)`
+
+download a server file to local.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scp2.Client.prototype.write" id="apidoc.element.scp2.Client.prototype.write">
+        function <span class="apidocSignatureSpan">scp2.Client.prototype.</span>write
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (options, callback) {
+  var destination = options.destination;
+  destination = unixy(destination);
+
+  var attrs = options.attrs;
+  var content = options.content;
+  var chunkSize = options.chunkSize || 32768;
+
+  var self = this;
+
+  this.sftp(function(err, sftp) {
+    if (err) {
+      return callback(err);
+    }
+
+    var _write = function(handle) {
+      self.emit('write', options);
+      var length;
+      var lastIndex = 0;
+      var lastCursor = 0;
+
+      if (Buffer.isBuffer(content)) {
+        var contents = [];
+        length = parseInt((content.length - 1) / chunkSize, 10) + 1;
+
+        for (var i = 0 ; i &lt; length; i++) {
+          contents.push(content.slice(i * chunkSize, (i + 1) * chunkSize));
+        }
+        async.eachSeries(contents, function(buf, callback) {
+          self.emit('transfer', buf, lastCursor, length);
+          sftp.write(handle, buf, 0, buf.length, lastIndex, function(err) {
+            lastIndex += buf.length;
+            lastCursor += 1;
+            callback(err);
+          });
+        }, function(err) {
+          sftp.close(handle, callback);
+        });
+      } else if (typeof content === 'number') {
+        // content is a file descriptor
+        length = parseInt((attrs.size - 1) / chunkSize, 10) + 1;
+        var range = new Array(length);
+        async.eachSeries(range, function(pos, callback) {
+          chunkSize = Math.min(chunkSize, attrs.size - lastIndex);
+          if (!chunkSize) {
+            callback(err);
+            return;
+          }
+          var buf = new Buffer(chunkSize);
+          fs.read(content, buf, 0, chunkSize, lastIndex, function(err, byteRead, buf) {
+            self.emit('transfer', buf, lastCursor, length);
+            sftp.write(handle, buf, 0, buf.length, lastIndex, function(err) {
+              lastIndex += buf.length;
+              lastCursor += 1;
+              callback(err);
+            });
+          });
+        }, function(err) {
+          sftp.close(handle, function(err) {
+            fs.close(content, callback);
+          });
+        });
+      } else {
+        throw new Error('Content should be buffer or file descriptor');
+      }
+    };
+
+    sftp.open(destination, 'w', attrs, function(err, handle) {
+      if (err) {
+        // destination is directory
+        destination = path.join(
+          destination, path.basename(options.source)
+        );
+        destination = unixy(destination);
+
+        // for emit write event
+        options.destination = destination;
+        sftp.open(destination, 'w', attrs, function(err, handle) {
+          _write(handle);
+        });
+      } else {
+        _write(handle);
+      }
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Make a directory on the remote server. It behaves like `mdkir -p`.
+
+- **write** `function(options, callback) -&gt; callback(err)`
+
+Write content on the remote server.
+
+```js
+client.<span class="apidocCodeKeywordSpan">write</span>({
+    destination: '/home/admin/data/file.txt',
+    content: 'hello world'
+}, callback)
+```
+
+The options can contain:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.scp2.client" id="apidoc.module.scp2.client">module scp2.client</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.scp2.client.Client" id="apidoc.element.scp2.client.Client">
+        function <span class="apidocSignatureSpan">scp2.client.</span>Client
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Client(options) {
+  this._options = options || {};
+
+  this.remote = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
