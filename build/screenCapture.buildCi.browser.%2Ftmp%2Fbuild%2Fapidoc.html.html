@@ -221,6 +221,40 @@
 
     </ol></li>
 
+    <li class="apidocModuleLi"><a href="#apidoc.module.scp2.scp">module scp2.scp</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scp2.scp.scp">
+            function <span class="apidocSignatureSpan">scp2.</span>scp
+            <span class="apidocSignatureSpan">(src, dest, client, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.scp2.scp.Client">
+            function <span class="apidocSignatureSpan">scp2.scp.</span>Client
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">scp2.scp.</span>_options</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">scp2.scp.</span>remote</span>
+
+        </li>
+
+    </ol></li>
+
 </ol></div>
 
 <div class="apidocSectionDiv">
@@ -438,7 +472,22 @@ client.<span class="apidocCodeKeywordSpan">defaults</span>({
     });
   });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+function cp2local(client, src, dest, callback) {
+  var remote = client.parse(src);
+  // only works on single file now
+  // TODO: glob match
+  if (/\/$/.test(dest)) {
+    dest = dest + path.basename(remote.path);
+  }
+  client.<span class="apidocCodeKeywordSpan">download</span>(remote.path, dest, function () {
+      client.close();
+      callback.apply(this, arguments);
+  });
+}
+
+exports = module.exports = global_client;
+...</pre></li>
     </ul>
 
 
@@ -554,7 +603,23 @@ async.until(function() {
   this.remote = remote;
   return remote;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var path = require('path');
+var glob = require('glob');
+var async = require('async');
+var Client = require('./client').Client;
+var global_client = new Client();
+
+function cp2remote(client, src, dest, callback) {
+  client.<span class="apidocCodeKeywordSpan">parse</span>(dest);
+
+  var _upload = function(files, callback) {
+var rootdir = files[0];
+
+async.eachSeries(files, function(fpath, done) {
+  fs.stat(fpath, function(err, stats) {
+    if (err) {
+...</pre></li>
     </ul>
 
 
@@ -816,6 +881,74 @@ The options can contain:
     <h2>
         <a href="#apidoc.element.scp2.client.Client" id="apidoc.element.scp2.client.Client">
         function <span class="apidocSignatureSpan">scp2.client.</span>Client
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Client(options) {
+  this._options = options || {};
+
+  this.remote = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.scp2.scp" id="apidoc.module.scp2.scp">module scp2.scp</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.scp2.scp.scp" id="apidoc.element.scp2.scp.scp">
+        function <span class="apidocSignatureSpan">scp2.</span>scp
+        <span class="apidocSignatureSpan">(src, dest, client, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scp = function (src, dest, client, callback) {
+  if (typeof client === 'function') {
+    callback = client;
+    client = new Client();
+  }
+  client.on('error', callback);
+  var parsed = client.parse(src);
+  if (parsed.host &amp;&amp; parsed.path) {
+    cp2local(client, parsed, dest, callback);
+  } else {
+    cp2remote(client, src, dest, callback);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+var client = require('scp2')
+```
+
+Copy a file to the server:
+
+```js
+client.<span class="apidocCodeKeywordSpan">scp</span>('file.txt', 'admin:password@example.com:/home/admin/',
+function(err) {
+})
+```
+
+You can also add the port to the url (default is 22):
+
+```js
+client.scp('file.txt', 'admin:password@example.com:port:/home/admin/', function(err) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.scp2.scp.Client" id="apidoc.element.scp2.scp.Client">
+        function <span class="apidocSignatureSpan">scp2.scp.</span>Client
         <span class="apidocSignatureSpan">(options)</span>
         </a>
     </h2>
